@@ -1,0 +1,1028 @@
+@prefix ns1: <http://www.w3.org/2004/02/skos/core#> .
+@prefix ns2: <https://w3id.org/h2kg/hydrogen-ontology#> .
+@prefix ns3: <http://qudt.org/schema/qudt/> .
+@prefix ns4: <http://www.w3.org/ns/prov#> .
+@prefix ns5: <http://purl.org/dc/terms/> .
+@prefix ns6: <http://www.w3.org/2002/07/owl#> .
+@prefix ns7: <http://www.w3.org/ns/dcat#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://w3id.org/h2kg/hydrogen-ontology> a ns6:Ontology ;
+    ns5:creator "Electrochemistry Research Group" ;
+    ns5:description "Ontology for representing low-Pt PEM fuel-cell cathode catalyst layer experiments, focusing on ionomer/solvent effects on ECSA, high-frequency resistance, and oxygen-transport metrics over realistic operating conditions." ;
+    ns5:license <https://creativecommons.org/licenses/by/4.0/> ;
+    ns5:title "Hydrogen Experiments Ontology � Low-Pt PEMFC Cathode Catalyst Layers" ;
+    ns6:versionInfo "Generated on 2025-12-07 10:58:11" .
+
+ns2:AgAgCl a ns2:ReferenceElectrode ;
+    rdfs:label "Ag/AgCl"@en .
+
+ns2:Agent a ns6:Class ;
+    rdfs:subClassOf ns4:Agent .
+
+ns2:BinderType a ns2:Parameter ;
+    ns1:prefLabel "Binder Type"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:CatalystImpregnation a ns2:Manufacturing ;
+    ns1:prefLabel "Catalyst Impregnation"@en ;
+    ns4:used ns2:PrecursorSolution,
+        ns2:SupportMaterial ;
+    ns2:hasInputMaterial ns2:PrecursorSolution,
+        ns2:SupportMaterial ;
+    ns2:hasOutputMaterial ns2:ImpregnatedSupport ;
+    ns2:hasParameter ns2:DryingTemperature,
+        ns2:DryingTime,
+        ns2:ImpregnationCycles,
+        ns2:PrecursorConcentration ;
+    ns2:usesInstrument ns2:Oven .
+
+ns2:CatalystInkPreparation a ns2:Manufacturing ;
+    ns1:prefLabel "Catalyst Ink Preparation"@en ;
+    ns4:used ns2:CatalystPowder,
+        ns2:IonomerSolution,
+        ns2:Solvent ;
+    ns2:hasInputMaterial ns2:CatalystPowder,
+        ns2:IonomerSolution,
+        ns2:Solvent ;
+    ns2:hasOutputMaterial ns2:CatalystInk ;
+    ns2:hasParameter ns2:IonomerMassFraction,
+        ns2:IonomerType,
+        ns2:SolidContentFraction,
+        ns2:SolventType,
+        ns2:StirringSpeed,
+        ns2:StirringTime,
+        ns2:Temperature ;
+    ns2:usesInstrument ns2:MagneticStirrer .
+
+ns2:CatalystLayerPorosity a ns2:Parameter ;
+    ns1:prefLabel "Catalyst Layer Porosity"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:CatalystLayerThickness a ns2:Parameter ;
+    ns1:prefLabel "Catalyst Layer Thickness"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+            ns3:unit <http://qudt.org/vocab/unit/MicroM> ] .
+
+ns2:CatalystLayerTortuosity a ns2:Parameter ;
+    ns1:prefLabel "Catalyst Layer Tortuosity"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:CatalystLayerVolume a ns2:NormalizationBasis ;
+    rdfs:label "Catalyst Layer Volume"@en .
+
+ns2:CathodeStoichiometricRatio a ns2:Parameter ;
+    ns1:prefLabel "Cathode Stoichiometric Ratio"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:CompressionPressure a ns2:Parameter ;
+    ns1:prefLabel "Compression Pressure"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+            ns3:unit <http://qudt.org/vocab/unit/BAR> ] .
+
+ns2:CurrentInterruptHFRMeasurement a ns2:Measurement ;
+    ns1:prefLabel "Current-Interrupt HFR Measurement"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:CellPressure,
+        ns2:CurrentDensity,
+        ns2:OperatingTemperature,
+        ns2:RelativeHumidity ;
+    ns2:measures ns2:OhmicResistance ;
+    ns2:usesInstrument ns2:FuelCellTestStation .
+
+ns2:DynamicHydrogenElectrode a ns2:ReferenceElectrode ;
+    rdfs:label "Dynamic Hydrogen Electrode (H2 Anode in MEA)"@en .
+
+ns2:ECSABasis a ns2:NormalizationBasis ;
+    rdfs:label "ECSA Basis"@en .
+
+ns2:EffectiveIonicConductivity a ns2:Property ;
+    ns1:prefLabel "Effective Ionic Conductivity"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricConductivity> ;
+            ns3:unit <http://qudt.org/vocab/unit/S-PER-M> ] .
+
+ns2:FlowFieldDesign a ns2:Parameter ;
+    ns1:prefLabel "Flow Field Design"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:GDEFixture a ns2:Instrument ;
+    ns1:prefLabel "GDE Fixture"@en .
+
+ns2:GDLType a ns2:Parameter ;
+    ns1:prefLabel "GDL Type"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:InkAgingTime a ns2:Parameter ;
+    ns1:prefLabel "Ink Aging Time"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Time> ;
+            ns3:unit <http://qudt.org/vocab/unit/HR> ] .
+
+ns2:InkUltrasonication a ns2:Manufacturing ;
+    ns1:prefLabel "Ink Ultrasonication"@en ;
+    ns4:used ns2:CatalystInk ;
+    ns2:hasInputMaterial ns2:CatalystInk ;
+    ns2:hasOutputMaterial ns2:CatalystInk ;
+    ns2:hasParameter ns2:DutyCycle,
+        ns2:SonicationPower,
+        ns2:SonicationTime,
+        ns2:Temperature ;
+    ns2:usesInstrument ns2:Ultrasonicator .
+
+ns2:IonomerEquivalentWeight a ns2:Parameter ;
+    ns1:prefLabel "Ionomer Equivalent Weight"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/MassPerAmountOfSubstance> ;
+            ns3:unit <http://qudt.org/vocab/unit/GM-PER-MOL> ] .
+
+ns2:IonomerMass a ns2:NormalizationBasis ;
+    rdfs:label "Ionomer Mass"@en .
+
+ns2:IonomerToCarbonRatio a ns2:Parameter ;
+    ns1:prefLabel "Ionomer To Carbon Ratio"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:MEAAssemblyProcess a ns2:Manufacturing ;
+    ns1:prefLabel "MEAAssembly Process"@en ;
+    ns4:used ns2:AnodeGDE,
+        ns2:CathodeGDE,
+        ns2:Gasket,
+        ns2:ProtonatedMembrane ;
+    ns2:hasInputMaterial ns2:AnodeGDE,
+        ns2:CathodeGDE,
+        ns2:Gasket,
+        ns2:ProtonatedMembrane ;
+    ns2:hasOutputMaterial ns2:MEAAssembly ;
+    ns2:hasParameter ns2:AssemblyTorque,
+        ns2:CatalystLoading,
+        ns2:CompressionPercent,
+        ns2:GasketThickness,
+        ns2:MembraneType ;
+    ns2:usesInstrument ns2:HotPress,
+        ns2:TorqueWrench .
+
+ns2:MassTransportResistance a ns2:Property ;
+    ns1:prefLabel "Mass Transport Resistance"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Resistance> ;
+            ns3:unit <http://qudt.org/vocab/unit/OHM> ] ;
+    ns2:normalizedTo ns2:GeometricArea .
+
+ns2:Metadata a ns6:Class .
+
+ns2:MicroporousLayerPresence a ns2:Parameter ;
+    ns1:prefLabel "Microporous Layer Presence"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:O2N2SwitchingMeasurement a ns2:Measurement ;
+    ns1:prefLabel "O2�N2 Switching Measurement"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:CellPressure,
+        ns2:GasComposition,
+        ns2:OperatingTemperature,
+        ns2:RelativeHumidity ;
+    ns2:measures ns2:LocalOxygenTransportResistance ;
+    ns2:usesInstrument ns2:FuelCellTestStation,
+        ns2:GasHumidificationUnit .
+
+ns2:OxygenGainLossMeasurement a ns2:Measurement ;
+    ns1:prefLabel "Oxygen Gain/Loss Measurement"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:CellPressure,
+        ns2:GasComposition,
+        ns2:OperatingTemperature,
+        ns2:RelativeHumidity ;
+    ns2:measures ns2:LimitingCurrentDensity,
+        ns2:LocalOxygenTransportResistance ;
+    ns2:usesInstrument ns2:FuelCellTestStation,
+        ns2:GasHumidificationUnit .
+
+ns2:PtMass a ns2:NormalizationBasis ;
+    rdfs:label "Pt Mass"@en .
+
+ns2:RDERotator a ns2:Instrument ;
+    ns1:prefLabel "RDERotator"@en .
+
+ns2:RRDEAssembly a ns2:Instrument ;
+    ns1:prefLabel "RRDEAssembly"@en .
+
+ns2:SCE a ns2:ReferenceElectrode ;
+    rdfs:label "SCE"@en .
+
+ns2:SHE a ns2:ReferenceElectrode ;
+    rdfs:label "SHE"@en .
+
+ns2:SprayCoating a ns2:Manufacturing ;
+    ns1:prefLabel "Spray Coating"@en ;
+    ns4:used ns2:CatalystInk,
+        ns2:ElectrodeSubstrate ;
+    ns2:hasInputMaterial ns2:CatalystInk,
+        ns2:ElectrodeSubstrate ;
+    ns2:hasOutputMaterial ns2:CoatedElectrode ;
+    ns2:hasParameter ns2:CarrierGasFlow,
+        ns2:NozzleDiameter,
+        ns2:Passes,
+        ns2:SprayDistance,
+        ns2:SubstrateTemperature ;
+    ns2:usesInstrument ns2:HotPlate,
+        ns2:MassFlowController,
+        ns2:SprayCoater .
+
+ns2:ThroughPlaneGasTransportMeasurement a ns2:Measurement ;
+    ns1:prefLabel "Through-Plane Gas Transport Measurement"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:CellPressure,
+        ns2:GasComposition,
+        ns2:OperatingTemperature,
+        ns2:RelativeHumidity ;
+    ns2:measures ns2:EffectiveOxygenDiffusionCoefficient,
+        ns2:LocalOxygenTransportResistance ;
+    ns2:usesInstrument ns2:EnvironmentalChamber,
+        ns2:ThroughPlaneTransportCell .
+
+ns2:Unit a ns6:Class .
+
+ns2:WaterUptakeIndicator a ns2:Property ;
+    ns1:prefLabel "Water Uptake Indicator"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:atCurrentDensity a ns6:ObjectProperty ;
+    rdfs:label "atCurrentDensity"@en ;
+    rdfs:domain ns2:DataPoint ;
+    rdfs:range ns3:QuantityValue .
+
+ns2:fromMeasurement a ns6:ObjectProperty ;
+    rdfs:label "fromMeasurement"@en ;
+    rdfs:domain ns2:DataPoint ;
+    rdfs:range ns2:Measurement .
+
+ns2:hasIdentifier a ns6:DatatypeProperty ;
+    rdfs:label "hasIdentifier"@en ;
+    rdfs:range rdfs:Literal .
+
+ns2:hasInputData a ns6:ObjectProperty ;
+    rdfs:label "hasInputData"@en ;
+    rdfs:domain ns2:Process ;
+    rdfs:range ns2:Data ;
+    rdfs:subPropertyOf ns4:used .
+
+ns2:hasInputMaterial a ns6:ObjectProperty ;
+    rdfs:label "hasInputMaterial"@en ;
+    rdfs:domain ns2:Process ;
+    rdfs:range ns2:Matter ;
+    rdfs:subPropertyOf ns4:used .
+
+ns2:hasName a ns6:DatatypeProperty ;
+    rdfs:label "hasName"@en ;
+    rdfs:range rdfs:Literal .
+
+ns2:hasOutputData a ns6:ObjectProperty ;
+    rdfs:label "hasOutputData"@en ;
+    rdfs:domain ns2:Measurement ;
+    rdfs:range ns2:Data ;
+    ns6:inverseOf ns4:wasGeneratedBy .
+
+ns2:hasOutputMaterial a ns6:ObjectProperty ;
+    rdfs:label "hasOutputMaterial"@en ;
+    rdfs:domain ns2:Process ;
+    rdfs:range ns2:Matter ;
+    ns6:inverseOf ns4:wasGeneratedBy .
+
+ns2:hasParameter a ns6:ObjectProperty ;
+    rdfs:label "hasParameter"@en ;
+    rdfs:domain ns2:Process ;
+    rdfs:range ns2:Parameter .
+
+ns2:hasProperty a ns6:ObjectProperty ;
+    rdfs:label "hasProperty"@en ;
+    rdfs:domain ns2:Measurement ;
+    rdfs:range ns2:Property .
+
+ns2:hasQuantityValue a ns6:ObjectProperty ;
+    rdfs:label "hasQuantityValue"@en .
+
+ns2:influences a ns6:ObjectProperty ;
+    rdfs:label "influences"@en .
+
+ns2:isPartOf a ns6:ObjectProperty ;
+    rdfs:label "isPartOf"@en ;
+    ns6:inverseOf ns2:hasPart .
+
+ns2:isSubProcessOf a ns6:ObjectProperty ;
+    rdfs:label "isSubProcessOf"@en ;
+    ns6:inverseOf ns2:hasSubProcess .
+
+ns2:measures a ns6:ObjectProperty ;
+    rdfs:label "measures"@en ;
+    rdfs:domain ns2:Measurement ;
+    rdfs:range ns2:Property .
+
+ns2:normalizedTo a ns6:ObjectProperty ;
+    rdfs:label "normalizedTo"@en ;
+    rdfs:range ns2:NormalizationBasis .
+
+ns2:ofProperty a ns6:ObjectProperty ;
+    rdfs:label "ofProperty"@en ;
+    rdfs:domain ns2:DataPoint ;
+    rdfs:range ns2:Property .
+
+ns2:referenceElectrode a ns6:ObjectProperty ;
+    rdfs:label "referenceElectrode"@en ;
+    rdfs:range ns2:ReferenceElectrode .
+
+ns2:usesInstrument a ns6:ObjectProperty ;
+    rdfs:label "usesInstrument"@en ;
+    rdfs:domain ns2:Process ;
+    rdfs:range ns2:Instrument .
+
+ns2:AssemblyTorque a ns2:Parameter ;
+    ns1:prefLabel "Assembly Torque"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Torque> ;
+            ns3:unit <http://qudt.org/vocab/unit/N-M> ] .
+
+ns2:BiasCurrent a ns2:Parameter ;
+    ns1:prefLabel "Bias Current"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliA> ] .
+
+ns2:BiasPotential a ns2:Parameter ;
+    ns1:prefLabel "Bias Potential"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliV> ] ;
+    ns2:referenceElectrode ns2:RHE .
+
+ns2:CarrierGasFlow a ns2:Parameter ;
+    ns1:prefLabel "Carrier Gas Flow"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/VolumeFlowRate> ;
+            ns3:unit <http://qudt.org/vocab/unit/CentiM3-PER-MIN> ] .
+
+ns2:CathodicStrippingPeakCurrent a ns2:Property ;
+    ns1:prefLabel "Cathodic Stripping Peak Current"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+            ns3:unit <http://qudt.org/vocab/unit/MicroA> ] .
+
+ns2:CathodicStrippingVoltammetry a ns2:Measurement ;
+    ns1:prefLabel "Cathodic Stripping Voltammetry"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:DepositionPotential,
+        ns2:DepositionTime,
+        ns2:ElectrolyteConcentration,
+        ns2:ElectrolyteType,
+        ns2:PotentialWindow,
+        ns2:ReferenceScale,
+        ns2:Temperature ;
+    ns2:measures ns2:CathodicStrippingPeakCurrent,
+        ns2:PeakPotential ;
+    ns2:usesInstrument ns2:ElectrochemicalWorkstation .
+
+ns2:CoatedElectrode a ns2:Matter ;
+    ns1:prefLabel "Coated Electrode"@en .
+
+ns2:CompressionPercent a ns2:Parameter ;
+    ns1:prefLabel "Compression Percent"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:CyclicVoltammetry a ns2:Measurement ;
+    ns1:prefLabel "Cyclic Voltammetry"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:ElectrolyteConcentration,
+        ns2:ElectrolyteType,
+        ns2:PotentialWindow,
+        ns2:ReferenceScale,
+        ns2:ScanRate,
+        ns2:Temperature ;
+    ns2:measures ns2:DoubleLayerCapacitance,
+        ns2:ElectrochemicallyActiveSurfaceArea,
+        ns2:OnsetPotential ;
+    ns2:usesInstrument ns2:ElectrochemicalWorkstation .
+
+ns2:DepositionPotential a ns2:Parameter ;
+    ns1:prefLabel "Deposition Potential"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/V> ] ;
+    ns2:referenceElectrode ns2:RHE .
+
+ns2:DepositionTime a ns2:Parameter ;
+    ns1:prefLabel "Deposition Time"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Time> ;
+            ns3:unit <http://qudt.org/vocab/unit/SEC> ] .
+
+ns2:DryingTemperature a ns2:Parameter ;
+    ns1:prefLabel "Drying Temperature"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ThermodynamicTemperature> ;
+            ns3:unit <http://qudt.org/vocab/unit/K> ] .
+
+ns2:DryingTime a ns2:Parameter ;
+    ns1:prefLabel "Drying Time"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Time> ;
+            ns3:unit <http://qudt.org/vocab/unit/MIN> ] .
+
+ns2:DutyCycle a ns2:Parameter ;
+    ns1:prefLabel "Duty Cycle"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:ECSAByDoubleLayerCapacitance a ns2:Measurement ;
+    ns1:prefLabel "ECSABy Double Layer Capacitance"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:ElectrolyteConcentration,
+        ns2:ElectrolyteType,
+        ns2:PotentialWindow,
+        ns2:ReferenceScale,
+        ns2:ScanRate,
+        ns2:Temperature ;
+    ns2:measures ns2:DoubleLayerCapacitance,
+        ns2:ElectrochemicallyActiveSurfaceArea ;
+    ns2:usesInstrument ns2:ElectrochemicalWorkstation .
+
+ns2:EffectiveOxygenDiffusionCoefficient a ns2:Property ;
+    ns1:prefLabel "Effective Oxygen Diffusion Coefficient"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/DiffusionCoefficient> ;
+            ns3:unit <http://qudt.org/vocab/unit/M2-PER-SEC> ] .
+
+ns2:ElectrochemicalImpedanceSpectroscopyGalvanostatic a ns2:Measurement ;
+    ns1:prefLabel "Electrochemical Impedance Spectroscopy Galvanostatic"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:ACAmplitude,
+        ns2:BiasCurrent,
+        ns2:ElectrolyteConcentration,
+        ns2:ElectrolyteType,
+        ns2:FrequencyRange,
+        ns2:ReferenceScale,
+        ns2:Temperature ;
+    ns2:measures ns2:ChargeTransferResistance,
+        ns2:DoubleLayerCapacitance,
+        ns2:OhmicResistance,
+        ns2:WarburgCoefficient ;
+    ns2:usesInstrument ns2:ElectrochemicalWorkstation .
+
+ns2:ElectrochemicalImpedanceSpectroscopyPotentiostatic a ns2:Measurement ;
+    ns1:prefLabel "Electrochemical Impedance Spectroscopy Potentiostatic"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:ACAmplitude,
+        ns2:BiasPotential,
+        ns2:ElectrolyteConcentration,
+        ns2:ElectrolyteType,
+        ns2:FrequencyRange,
+        ns2:ReferenceScale,
+        ns2:Temperature ;
+    ns2:measures ns2:ChargeTransferResistance,
+        ns2:DoubleLayerCapacitance,
+        ns2:OhmicResistance,
+        ns2:WarburgCoefficient ;
+    ns2:usesInstrument ns2:ElectrochemicalWorkstation .
+
+ns2:ElectronTransferNumber a ns2:Property ;
+    ns1:prefLabel "Electron Transfer Number"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:EnvironmentalChamber a ns2:Instrument ;
+    ns1:prefLabel "Environmental Chamber"@en .
+
+ns2:Frequency a ns2:Parameter ;
+    ns1:prefLabel "Frequency"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Frequency> ;
+            ns3:unit <http://qudt.org/vocab/unit/HZ> ] .
+
+ns2:GasketThickness a ns2:Parameter ;
+    ns1:prefLabel "Gasket Thickness"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+            ns3:unit <http://qudt.org/vocab/unit/MicroM> ] .
+
+ns2:HotPlate a ns2:Instrument ;
+    ns1:prefLabel "Hot Plate"@en .
+
+ns2:HotPress a ns2:Instrument ;
+    ns1:prefLabel "Hot Press"@en .
+
+ns2:IRCompensationFraction a ns2:Parameter ;
+    ns1:prefLabel "IRCompensation Fraction"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:ImpregnatedSupport a ns2:Matter ;
+    ns1:prefLabel "Impregnated Support"@en .
+
+ns2:ImpregnationCycles a ns2:Parameter ;
+    ns1:prefLabel "Impregnation Cycles"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:IonomerMassFraction a ns2:Parameter ;
+    ns1:prefLabel "Ionomer Mass Fraction"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:IonomerType a ns2:Parameter ;
+    ns1:prefLabel "Ionomer Type"@en .
+
+ns2:KineticCurrent a ns2:Property ;
+    ns1:prefLabel "Kinetic Current"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrentDensity> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliA-PER-CentiM2> ] ;
+    ns2:normalizedTo ns2:GeometricArea .
+
+ns2:LimitingCurrentDensity a ns2:Property ;
+    ns1:prefLabel "Limiting Current Density"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrentDensity> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliA-PER-CentiM2> ] ;
+    ns2:normalizedTo ns2:GeometricArea .
+
+ns2:LinearSweepVoltammetry a ns2:Measurement ;
+    ns1:prefLabel "Linear Sweep Voltammetry"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:ElectrolyteConcentration,
+        ns2:ElectrolyteType,
+        ns2:IRCompensationFraction,
+        ns2:PotentialWindow,
+        ns2:ReferenceScale,
+        ns2:RotationRate,
+        ns2:ScanRate,
+        ns2:Temperature ;
+    ns2:measures ns2:CurrentDensity,
+        ns2:OnsetPotential,
+        ns2:Overpotential,
+        ns2:TafelSlope ;
+    ns2:usesInstrument ns2:ElectrochemicalWorkstation .
+
+ns2:MEAAssembly a ns2:Matter ;
+    ns1:prefLabel "MEAAssembly"@en .
+
+ns2:MEAPolarization a ns2:Measurement ;
+    ns1:prefLabel "MEAPolarization"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:CatalystLoading,
+        ns2:CellPressure,
+        ns2:OperatingTemperature,
+        ns2:RelativeHumidity ;
+    ns2:measures ns2:CurrentDensity,
+        ns2:PowerDensity ;
+    ns2:usesInstrument ns2:FuelCellTestStation .
+
+ns2:MagneticStirrer a ns2:Instrument ;
+    ns1:prefLabel "Magnetic Stirrer"@en .
+
+ns2:MassFlowController a ns2:Instrument ;
+    ns1:prefLabel "Mass Flow Controller"@en .
+
+ns2:MembraneType a ns2:Parameter ;
+    ns1:prefLabel "Membrane Type"@en .
+
+ns2:NozzleDiameter a ns2:Parameter ;
+    ns1:prefLabel "Nozzle Diameter"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliM> ] .
+
+ns2:Oven a ns2:Instrument ;
+    ns1:prefLabel "Oven"@en .
+
+ns2:Overpotential a ns2:Property ;
+    ns1:prefLabel "Overpotential"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliV> ] ;
+    ns2:referenceElectrode ns2:RHE .
+
+ns2:PeakCurrent a ns2:Property ;
+    ns1:prefLabel "Peak Current"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrent> ;
+            ns3:unit <http://qudt.org/vocab/unit/MicroA> ] .
+
+ns2:PeroxideYield a ns2:Property ;
+    ns1:prefLabel "Peroxide Yield"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:PowerDensity a ns2:Property ;
+    ns1:prefLabel "Power Density"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/PowerPerArea> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliW-PER-CentiM2> ] .
+
+ns2:PrecursorConcentration a ns2:Parameter ;
+    ns1:prefLabel "Precursor Concentration"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/AmountOfSubstanceConcentration> ;
+            ns3:unit <http://qudt.org/vocab/unit/MOL-PER-L> ] .
+
+ns2:RingCollectionEfficiency a ns2:Parameter ;
+    ns1:prefLabel "Ring Collection Efficiency"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:RingPotential a ns2:Parameter ;
+    ns1:prefLabel "Ring Potential"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/V> ] ;
+    ns2:referenceElectrode ns2:RHE .
+
+ns2:RotatingRingDiskVoltammetry a ns2:Measurement ;
+    ns1:prefLabel "Rotating Ring Disk Voltammetry"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:ElectrolyteConcentration,
+        ns2:ElectrolyteType,
+        ns2:PotentialWindow,
+        ns2:ReferenceScale,
+        ns2:RingCollectionEfficiency,
+        ns2:RingPotential,
+        ns2:RotationRate,
+        ns2:ScanRate,
+        ns2:Temperature ;
+    ns2:measures ns2:CurrentDensity,
+        ns2:ElectronTransferNumber,
+        ns2:KineticCurrent,
+        ns2:PeroxideYield ;
+    ns2:usesInstrument ns2:ElectrochemicalWorkstation .
+
+ns2:SolidContentFraction a ns2:Parameter ;
+    ns1:prefLabel "Solid Content Fraction"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:SolventType a ns2:Parameter ;
+    ns1:prefLabel "Solvent Type"@en .
+
+ns2:SonicationPower a ns2:Parameter ;
+    ns1:prefLabel "Sonication Power"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Power> ;
+            ns3:unit <http://qudt.org/vocab/unit/W> ] .
+
+ns2:SonicationTime a ns2:Parameter ;
+    ns1:prefLabel "Sonication Time"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Time> ;
+            ns3:unit <http://qudt.org/vocab/unit/MIN> ] .
+
+ns2:SprayCoater a ns2:Instrument ;
+    ns1:prefLabel "Spray Coater"@en .
+
+ns2:SprayDistance a ns2:Parameter ;
+    ns1:prefLabel "Spray Distance"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Length> ;
+            ns3:unit <http://qudt.org/vocab/unit/CentiM> ] .
+
+ns2:SquareWaveAmplitude a ns2:Parameter ;
+    ns1:prefLabel "Square Wave Amplitude"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliV> ] .
+
+ns2:SquareWaveVoltammetry a ns2:Measurement ;
+    ns1:prefLabel "Square Wave Voltammetry"@en ;
+    ns2:hasOutputData ns2:ExperimentDataset ;
+    ns2:hasParameter ns2:ElectrolyteConcentration,
+        ns2:ElectrolyteType,
+        ns2:Frequency,
+        ns2:PotentialWindow,
+        ns2:ReferenceScale,
+        ns2:SquareWaveAmplitude,
+        ns2:Temperature ;
+    ns2:measures ns2:PeakCurrent,
+        ns2:PeakPotential ;
+    ns2:usesInstrument ns2:ElectrochemicalWorkstation .
+
+ns2:StirringSpeed a ns2:Parameter ;
+    ns1:prefLabel "Stirring Speed"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Frequency> ;
+            ns3:unit <http://qudt.org/vocab/unit/REV-PER-MIN> ] .
+
+ns2:StirringTime a ns2:Parameter ;
+    ns1:prefLabel "Stirring Time"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Time> ;
+            ns3:unit <http://qudt.org/vocab/unit/MIN> ] .
+
+ns2:SubstrateTemperature a ns2:Parameter ;
+    ns1:prefLabel "Substrate Temperature"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ThermodynamicTemperature> ;
+            ns3:unit <http://qudt.org/vocab/unit/K> ] .
+
+ns2:TafelSlope a ns2:Property ;
+    ns1:prefLabel "Tafel Slope"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliV> ] .
+
+ns2:ThroughPlaneTransportCell a ns2:Instrument ;
+    ns1:prefLabel "Through-Plane Transport Cell"@en .
+
+ns2:TorqueWrench a ns2:Instrument ;
+    ns1:prefLabel "Torque Wrench"@en .
+
+ns2:Ultrasonicator a ns2:Instrument ;
+    ns1:prefLabel "Ultrasonicator"@en .
+
+ns2:hasPart a ns6:ObjectProperty ;
+    rdfs:label "hasPart"@en .
+
+ns2:hasSubProcess a ns6:ObjectProperty ;
+    rdfs:label "hasSubProcess"@en .
+
+ns2:ACAmplitude a ns2:Parameter ;
+    ns1:prefLabel "ACAmplitude"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliV> ] .
+
+ns2:AnodeGDE a ns2:Matter ;
+    ns1:prefLabel "Anode GDE"@en .
+
+ns2:CatalystLoading a ns2:Parameter ;
+    ns1:prefLabel "Catalyst Loading"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/MassPerArea> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliGM-PER-CentiM2> ] .
+
+ns2:CatalystMass a ns2:NormalizationBasis ;
+    rdfs:label "Catalyst Mass"@en .
+
+ns2:CatalystPowder a ns2:Matter ;
+    ns1:prefLabel "Catalyst Powder"@en .
+
+ns2:CathodeGDE a ns2:Matter ;
+    ns1:prefLabel "Cathode GDE"@en .
+
+ns2:ChargeTransferResistance a ns2:Property ;
+    ns1:prefLabel "Charge Transfer Resistance"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Resistance> ;
+            ns3:unit <http://qudt.org/vocab/unit/OHM> ] .
+
+ns2:ElectrodeSubstrate a ns2:Matter ;
+    ns1:prefLabel "Electrode Substrate"@en .
+
+ns2:FrequencyRange a ns2:Parameter ;
+    ns1:prefLabel "Frequency Range"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Frequency> ;
+            ns3:unit <http://qudt.org/vocab/unit/HZ> ] .
+
+ns2:GasHumidificationUnit a ns2:Instrument ;
+    ns1:prefLabel "Gas Humidification Unit"@en .
+
+ns2:Gasket a ns2:Matter ;
+    ns1:prefLabel "Gasket"@en .
+
+ns2:IonomerSolution a ns2:Matter ;
+    ns1:prefLabel "Ionomer Solution"@en .
+
+ns2:OnsetPotential a ns2:Property ;
+    ns1:prefLabel "Onset Potential"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliV> ] ;
+    ns2:referenceElectrode ns2:RHE .
+
+ns2:PeakPotential a ns2:Property ;
+    ns1:prefLabel "Peak Potential"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliV> ] ;
+    ns2:referenceElectrode ns2:RHE .
+
+ns2:PrecursorSolution a ns2:Matter ;
+    ns1:prefLabel "Precursor Solution"@en .
+
+ns2:ProtonatedMembrane a ns2:Matter ;
+    ns1:prefLabel "Protonated Membrane"@en .
+
+ns2:RotationRate a ns2:Parameter ;
+    ns1:prefLabel "Rotation Rate"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Frequency> ;
+            ns3:unit <http://qudt.org/vocab/unit/REV-PER-MIN> ] .
+
+ns2:Solvent a ns2:Matter ;
+    ns1:prefLabel "Solvent"@en .
+
+ns2:SupportMaterial a ns2:Matter ;
+    ns1:prefLabel "Support Material"@en .
+
+ns2:WarburgCoefficient a ns2:Property ;
+    ns1:prefLabel "Warburg Coefficient"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Resistance> ;
+            ns3:unit <http://qudt.org/vocab/unit/OHM> ] .
+
+ns2:Data a ns6:Class ;
+    rdfs:subClassOf ns4:Entity .
+
+ns2:ElectrochemicallyActiveSurfaceArea a ns2:Property ;
+    ns1:prefLabel "Electrochemically Active Surface Area"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/AreaPerMass> ;
+            ns3:unit <http://qudt.org/vocab/unit/M2-PER-GM> ] ;
+    ns2:normalizedTo ns2:CatalystMass .
+
+ns2:GasComposition a ns2:Parameter ;
+    ns1:prefLabel "Gas Composition"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:LocalOxygenTransportResistance a ns2:Property ;
+    ns1:prefLabel "Local Oxygen Transport Resistance"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Resistance> ;
+            ns3:unit <http://qudt.org/vocab/unit/OHM> ] ;
+    ns2:normalizedTo ns2:GeometricArea .
+
+ns2:CurrentDensity a ns2:Property ;
+    ns1:prefLabel "Current Density"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricCurrentDensity> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliA-PER-CentiM2> ] ;
+    ns2:normalizedTo ns2:GeometricArea .
+
+ns2:DoubleLayerCapacitance a ns2:Property ;
+    ns1:prefLabel "Double Layer Capacitance"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Capacitance> ;
+            ns3:unit <http://qudt.org/vocab/unit/FARAD-PER-CentiM2> ] ;
+    ns2:normalizedTo ns2:GeometricArea .
+
+ns2:FuelCellTestStation a ns2:Instrument ;
+    ns1:prefLabel "Fuel Cell Test Station"@en .
+
+ns2:OhmicResistance a ns2:Property ;
+    ns1:prefLabel "Ohmic Resistance"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Resistance> ;
+            ns3:unit <http://qudt.org/vocab/unit/OHM> ] .
+
+ns2:ScanRate a ns2:Parameter ;
+    ns1:prefLabel "Scan Rate"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Frequency> ;
+            ns3:unit <http://qudt.org/vocab/unit/MilliV-PER-SEC> ] .
+
+ns2:CellPressure a ns2:Parameter ;
+    ns1:prefLabel "Cell Pressure"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:numericValue 2e+00 ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Pressure> ;
+            ns3:unit <http://qudt.org/vocab/unit/BAR> ] .
+
+ns2:DataPoint a ns6:Class ;
+    rdfs:subClassOf ns4:Entity .
+
+ns2:Manufacturing a ns6:Class ;
+    rdfs:subClassOf ns2:Process .
+
+ns2:OperatingTemperature a ns2:Parameter ;
+    ns1:prefLabel "Operating Temperature"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:numericValue 3.5315e+02 ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ThermodynamicTemperature> ;
+            ns3:unit <http://qudt.org/vocab/unit/K> ] .
+
+ns2:RelativeHumidity a ns2:Parameter ;
+    ns1:prefLabel "Relative Humidity"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:numericValue 1e+02 ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Dimensionless> ;
+            ns3:unit <http://qudt.org/vocab/unit/PERCENT> ] .
+
+ns2:CatalystInk a ns2:Matter ;
+    ns1:prefLabel "Catalyst Ink"@en .
+
+ns2:GeometricArea a ns2:NormalizationBasis ;
+    rdfs:label "Geometric Area"@en .
+
+ns2:PotentialWindow a ns2:Parameter ;
+    ns1:prefLabel "Potential Window"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ElectricPotential> ;
+            ns3:unit <http://qudt.org/vocab/unit/V> ] .
+
+ns2:ReferenceElectrode a ns6:Class ;
+    rdfs:label "Reference Electrode"@en .
+
+ns2:NormalizationBasis a ns6:Class,
+        ns2:Parameter ;
+    rdfs:label "Normalization Basis"@en .
+
+ns2:Process a ns6:Class ;
+    rdfs:subClassOf ns4:Activity .
+
+ns2:RHE a ns2:ReferenceElectrode ;
+    rdfs:label "RHE"@en .
+
+ns2:ElectrochemicalWorkstation a ns2:Instrument ;
+    ns1:prefLabel "Electrochemical Workstation"@en .
+
+ns2:ElectrolyteConcentration a ns2:Parameter ;
+    ns1:prefLabel "Electrolyte Concentration"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/AmountOfSubstanceConcentration> ;
+            ns3:unit <http://qudt.org/vocab/unit/MOL-PER-L> ] .
+
+ns2:ElectrolyteType a ns2:Parameter ;
+    ns1:prefLabel "Electrolyte Type"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:unit <http://qudt.org/vocab/unit/UNITLESS> ] .
+
+ns2:ReferenceScale a ns2:Parameter ;
+    ns1:prefLabel "Reference Scale"@en ;
+    ns2:referenceElectrode ns2:RHE .
+
+ns2:Temperature a ns2:Parameter ;
+    ns1:prefLabel "Temperature"@en ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/ThermodynamicTemperature> ;
+            ns3:unit <http://qudt.org/vocab/unit/K> ] .
+
+ns2:ExperimentDataset a ns2:Data ;
+    ns5:creator "Electrochemistry Research Group" ;
+    ns5:format "CSV" ;
+    ns5:issued "2025-12-07"^^xsd:date ;
+    ns5:license <https://creativecommons.org/licenses/by/4.0/> ;
+    ns5:title "Hydrogen Experiment Dataset" ;
+    ns1:prefLabel "Experiment Dataset"@en ;
+    ns7:downloadURL <https://example.org/download/dataset.csv> ;
+    ns4:wasGeneratedBy ns2:CathodicStrippingVoltammetry,
+        ns2:CyclicVoltammetry,
+        ns2:ECSAByDoubleLayerCapacitance,
+        ns2:ElectrochemicalImpedanceSpectroscopyGalvanostatic,
+        ns2:ElectrochemicalImpedanceSpectroscopyPotentiostatic,
+        ns2:LinearSweepVoltammetry,
+        ns2:MEAPolarization,
+        ns2:RotatingDiskVoltammetry,
+        ns2:RotatingRingDiskVoltammetry,
+        ns2:SquareWaveVoltammetry .
+
+ns2:Matter a ns6:Class .
+
+ns2:Instrument a ns6:Class ;
+    rdfs:subClassOf ns4:Entity .
+
+ns2:Measurement a ns6:Class ;
+    rdfs:subClassOf ns2:Process .
+
+ns2:Property a ns6:Class .
+
+ns2:Parameter a ns6:Class .
+
+[] a ns2:DataPoint ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/AreaPerMass> ;
+            ns3:unit <http://qudt.org/vocab/unit/M2-PER-GM> ] ;
+    ns2:normalizedTo ns2:CatalystMass ;
+    ns2:ofProperty ns2:ElectrochemicallyActiveSurfaceArea .
+
+[] a ns2:DataPoint ;
+    ns2:hasQuantityValue [ a ns3:QuantityValue ;
+            ns3:quantityKind <http://qudt.org/vocab/quantitykind/Resistance> ;
+            ns3:unit <http://qudt.org/vocab/unit/OHM> ] ;
+    ns2:ofProperty ns2:OhmicResistance .
+
