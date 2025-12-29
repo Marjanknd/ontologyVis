@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+  xmlns:ns1="https://w3id.org/h2kg/hydrogen-ontology#"
+  xmlns:ns2="http://purl.org/dc/terms/"
+  xmlns:ns3="http://qudt.org/schema/qudt/"
+  xmlns:ns4="http://qudt.org/vocab/unit/"
+  xmlns:ns5="http://www.w3.org/2002/07/owl#"
+  xmlns:ns6="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:ns7="http://www.w3.org/2004/02/skos/core#"
+  xmlns:ns8="http://www.w3.org/ns/prov#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <ns5:Ontology rdf:about="https://w3id.org/h2kg/hydrogen-ontology#">
+    <ns2:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2025-12-29</ns2:created>
+  </ns5:Ontology>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasAgent">
+    <rdfs:label xml:lang="en">has agent</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasData">
+    <rdfs:label xml:lang="en">has data</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasIdentifier">
+    <rdfs:label xml:lang="en">has identifier</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasInstrument">
+    <rdfs:label xml:lang="en">has instrument</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasManufacturing">
+    <rdfs:label xml:lang="en">has manufacturing</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasMeasurement">
+    <rdfs:label xml:lang="en">has measurement</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasMetadata">
+    <rdfs:label xml:lang="en">has metadata</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasName">
+    <rdfs:label xml:lang="en">has name</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasParameter">
+    <rdfs:label xml:lang="en">has parameter</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasProperty">
+    <rdfs:label xml:lang="en">has property</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:ObjectProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#hasValue">
+    <rdfs:label xml:lang="en">has value</rdfs:label>
+  </ns5:ObjectProperty>
+  <ns5:DatatypeProperty rdf:about="https://w3id.org/h2kg/hydrogen-ontology#literalValue">
+    <rdfs:label xml:lang="en">literal value</rdfs:label>
+  </ns5:DatatypeProperty>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Agent">
+    <rdfs:label xml:lang="en">Agent</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Agent"/>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Data">
+    <rdfs:label xml:lang="en">Data</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Identifier">
+    <rdfs:label xml:lang="en">Identifier</rdfs:label>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Instrument">
+    <rdfs:label xml:lang="en">Instrument</rdfs:label>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Manufacturing">
+    <rdfs:label xml:lang="en">Manufacturing</rdfs:label>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Measurement">
+    <rdfs:label xml:lang="en">Measurement</rdfs:label>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Metadata">
+    <rdfs:label xml:lang="en">Metadata</rdfs:label>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Name">
+    <rdfs:label xml:lang="en">Name</rdfs:label>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Parameter">
+    <rdfs:label xml:lang="en">Parameter</rdfs:label>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Property">
+    <rdfs:label xml:lang="en">Property</rdfs:label>
+  </ns5:Class>
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Value">
+    <rdfs:label xml:lang="en">Value</rdfs:label>
+  </ns5:Class>
+
+  <!-- ===== Individuals / instances (ABox) and detailed schema below ===== -->
+
+  <ns1:ResearchQuestion rdf:about="https://w3id.org/h2kg/hydrogen-ontology#RQ_G05_Jupiter_IonomerTransport">
+    <rdfs:label xml:lang="en">G05 Jupiter – Ionomer Transport Research Question</rdfs:label>
+  </ns1:ResearchQuestion>
+
+  <ns1:Paper rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Paper_G05_Jupiter_Source">
+    <rdfs:label xml:lang="en">Source Paper (G05 Jupiter Ionomer Transport)</rdfs:label>
+    <ns2:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unknown</ns2:creator>
+  </ns1:Paper>
+
+  <ns1:Dataset rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Dataset_G05_Jupiter">
+    <rdfs:label xml:lang="en">Dataset – G05 Jupiter Ionomer Transport</rdfs:label>
+    <ns1:hasMetadata>
+      <ns1:Metadata rdf:nodeID="N2b1b5a7c9c8d4a15a0e4b9f1c401c5f4">
+        <ns7:prefLabel xml:lang="en">Ontology Version</ns7:prefLabel>
+        <ns1:literalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Final</ns1:literalValue>
+      </ns1:Metadata>
+    </ns1:hasMetadata>
+
+    <ns1:hasData>
+      <ns1:Data rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Data_G05_Jupiter">
+        <rdfs:label xml:lang="en">Extracted Data</rdfs:label>
+      </ns1:Data>
+    </ns1:hasData>
+  </ns1:Dataset>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty">
+    <rdfs:label xml:lang="en">Ionomer Transport Property</rdfs:label>
+    <ns7:definition xml:lang="en">A property describing transport behavior in ionomer phases (e.g., proton conductivity, gas permeability, water uptake).</ns7:definition>
+  </ns1:Property>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonomerContent">
+    <rdfs:label xml:lang="en">Ionomer Content</rdfs:label>
+    <ns7:definition xml:lang="en">Fraction or amount of ionomer present in a catalyst layer or ink.</ns7:definition>
+    <ns1:hasValue>
+      <ns1:Value rdf:nodeID="Nbbf9c0f4e1d64d7d8c6b4d2f58c7b0e1">
+        <ns7:prefLabel xml:lang="en">Ionomer content value</ns7:prefLabel>
+        <ns1:hasQuantityValue>
+          <ns4:QuantityValue rdf:nodeID="Nc93b2c06e4b34bde99f1c1994d7c0e5a">
+            <ns3:numericValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double">0.0</ns3:numericValue>
+            <ns3:unit rdf:resource="http://qudt.org/vocab/unit/PERCENT"/>
+          </ns4:QuantityValue>
+      </ns1:hasQuantityValue>
+      </ns1:Value>
+
+    </ns1:hasValue>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#RelativeHumidity">
+    <rdfs:label xml:lang="en">Relative Humidity</rdfs:label>
+    <ns7:definition xml:lang="en">Ambient or controlled relative humidity condition for measurements.</ns7:definition>
+  </ns1:Parameter>
+
+  <ns1:Measurement rdf:about="https://w3id.org/h2kg/hydrogen-ontology#EISMeasurement">
+    <rdfs:label xml:lang="en">Electrochemical Impedance Spectroscopy Measurement</rdfs:label>
+  </ns1:Measurement>
+
+  <ns1:Instrument rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Potentiostat">
+    <rdfs:label xml:lang="en">Potentiostat</rdfs:label>
+  </ns1:Instrument>
+
+  <ns1:Measurement rdf:about="https://w3id.org/h2kg/hydrogen-ontology#GasPermeabilityMeasurement">
+    <rdfs:label xml:lang="en">Gas Permeability Measurement</rdfs:label>
+  </ns1:Measurement>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ProtonConductivity">
+    <rdfs:label xml:lang="en">Proton Conductivity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#OxygenPermeability">
+    <rdfs:label xml:lang="en">Oxygen Permeability</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#WaterUptake">
+    <rdfs:label xml:lang="en">Water Uptake</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Temperature">
+    <rdfs:label xml:lang="en">Temperature</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Pressure">
+    <rdfs:label xml:lang="en">Pressure</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#MembraneThickness">
+    <rdfs:label xml:lang="en">Membrane Thickness</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#CatalystLayerThickness">
+    <rdfs:label xml:lang="en">Catalyst Layer Thickness</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#MicroporousLayerPresence">
+    <rdfs:label xml:lang="en">Microporous Layer Presence</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:DataPoint rdf:about="https://w3id.org/h2kg/hydrogen-ontology#DP_001">
+    <rdfs:label xml:lang="en">DataPoint 001</rdfs:label>
+    <ns1:hasProperty>
+      <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ProtonConductivity"/>
+    </ns1:hasProperty>
+    <ns1:hasParameter>
+      <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#RelativeHumidity"/>
+    </ns1:hasParameter>
+    <ns1:hasParameter>
+      <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Temperature"/>
+    </ns1:hasParameter>
+  </ns1:DataPoint>
+
+  <ns1:Unit rdf:about="https://w3id.org/h2kg/hydrogen-ontology#S_per_cm">
+    <rdfs:label xml:lang="en">S/cm</rdfs:label>
+    <ns1:hasIdentifier>
+      <ns1:Identifier rdf:nodeID="N0d0f8d0c3c3b4fe89bfbf0e1c51d9f73">
+        <ns1:literalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">S/cm</ns1:literalValue>
+      </ns1:Identifier>
+    </ns1:hasIdentifier>
+  </ns1:Unit>
+
+  <ns1:Unit rdf:about="https://w3id.org/h2kg/hydrogen-ontology#cm2_per_s">
+    <rdfs:label xml:lang="en">cm^2/s</rdfs:label>
+  </ns1:Unit>
+
+  <ns1:Unit rdf:about="https://w3id.org/h2kg/hydrogen-ontology#mol_per_cm3">
+    <rdfs:label xml:lang="en">mol/cm^3</rdfs:label>
+  </ns1:Unit>
+
+  <ns1:ReferenceElectrode rdf:about="https://w3id.org/h2kg/hydrogen-ontology#RHE">
+    <rdfs:label xml:lang="en">RHE</rdfs:label>
+  </ns1:ReferenceElectrode>
+
+  <ns1:Manufacturing rdf:about="https://w3id.org/h2kg/hydrogen-ontology#SprayCoating">
+    <rdfs:label xml:lang="en">Spray Coating</rdfs:label>
+  </ns1:Manufacturing>
+
+  <ns1:Manufacturing rdf:about="https://w3id.org/h2kg/hydrogen-ontology#DoctorBlading">
+    <rdfs:label xml:lang="en">Doctor Blading</rdfs:label>
+  </ns1:Manufacturing>
+
+  <ns1:Manufacturing rdf:about="https://w3id.org/h2kg/hydrogen-ontology#InkFormulation">
+    <rdfs:label xml:lang="en">Ink Formulation</rdfs:label>
+  </ns1:Manufacturing>
+
+  <ns1:Metadata rdf:about="https://w3id.org/h2kg/hydrogen-ontology#License">
+    <rdfs:label xml:lang="en">License</rdfs:label>
+    <ns1:literalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Unspecified</ns1:literalValue>
+  </ns1:Metadata>
+
+  <ns1:Metadata rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Source">
+    <rdfs:label xml:lang="en">Source</rdfs:label>
+    <ns1:literalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#string">G05 Jupiter</ns1:literalValue>
+  </ns1:Metadata>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#WaterDiffusivity">
+    <rdfs:label xml:lang="en">Water Diffusivity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#GasDiffusivity">
+    <rdfs:label xml:lang="en">Gas Diffusivity</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonomerPermeability">
+    <rdfs:label xml:lang="en">Ionomer Permeability</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#OxygenSolubility">
+    <rdfs:label xml:lang="en">Oxygen Solubility</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#WaterContent">
+    <rdfs:label xml:lang="en">Water Content</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonomerEquivalentWeight">
+    <rdfs:label xml:lang="en">Ionomer Equivalent Weight</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#SolventComposition">
+    <rdfs:label xml:lang="en">Solvent Composition</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonomerSideChainLength">
+    <rdfs:label xml:lang="en">Ionomer Side Chain Length</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonExchangeCapacity">
+    <rdfs:label xml:lang="en">Ion Exchange Capacity</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#DryDensity">
+    <rdfs:label xml:lang="en">Dry Density</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#WaterActivity">
+    <rdfs:label xml:lang="en">Water Activity</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Porosity">
+    <rdfs:label xml:lang="en">Porosity</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Tortuosity">
+    <rdfs:label xml:lang="en">Tortuosity</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#SurfaceArea">
+    <rdfs:label xml:lang="en">Surface Area</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#PtLoading">
+    <rdfs:label xml:lang="en">Pt Loading</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonomerFilmThickness">
+    <rdfs:label xml:lang="en">Ionomer Film Thickness</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ElectrodePotential">
+    <rdfs:label xml:lang="en">Electrode Potential</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Unit rdf:about="https://w3id.org/h2kg/hydrogen-ontology#V_vs_RHE">
+    <rdfs:label xml:lang="en">V vs RHE</rdfs:label>
+  </ns1:Unit>
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ScanRate">
+    <rdfs:label xml:lang="en">Scan Rate</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Unit rdf:about="https://w3id.org/h2kg/hydrogen-ontology#mV_per_s">
+    <rdfs:label xml:lang="en">mV/s</rdfs:label>
+  </ns1:Unit>
+
+  <ns1:Measurement rdf:about="https://w3id.org/h2kg/hydrogen-ontology#CyclicVoltammetry">
+    <rdfs:label xml:lang="en">Cyclic Voltammetry</rdfs:label>
+  </ns1:Measurement>
+
+  <ns1:Instrument rdf:about="https://w3id.org/h2kg/hydrogen-ontology#RDE_Setup">
+    <rdfs:label xml:lang="en">RDE Setup</rdfs:label>
+  </ns1:Instrument>
+
+  <ns1:Instrument rdf:about="https://w3id.org/h2kg/hydrogen-ontology#RRDE_Setup">
+    <rdfs:label xml:lang="en">RRDE Setup</rdfs:label>
+  </ns1:Instrument>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#OxygenTransportResistance">
+    <rdfs:label xml:lang="en">Oxygen Transport Resistance</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#MassTransportResistance">
+    <rdfs:label xml:lang="en">Mass Transport Resistance</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#OhmicResistance">
+    <rdfs:label xml:lang="en">Ohmic Resistance</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ChargeTransferResistance">
+    <rdfs:label xml:lang="en">Charge Transfer Resistance</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#GasComposition">
+    <rdfs:label xml:lang="en">Gas Composition</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#O2Fraction">
+    <rdfs:label xml:lang="en">O2 Fraction</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#N2Fraction">
+    <rdfs:label xml:lang="en">N2 Fraction</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#FlowRate">
+    <rdfs:label xml:lang="en">Flow Rate</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Unit rdf:about="https://w3id.org/h2kg/hydrogen-ontology#sccm">
+    <rdfs:label xml:lang="en">sccm</rdfs:label>
+  </ns1:Unit>
+
+  <ns1:Measurement rdf:about="https://w3id.org/h2kg/hydrogen-ontology#LimitingCurrentMeasurement">
+    <rdfs:label xml:lang="en">Limiting Current Measurement</rdfs:label>
+  </ns1:Measurement>
+
+  <ns1:Measurement rdf:about="https://w3id.org/h2kg/hydrogen-ontology#MassTransportAnalysis">
+    <rdfs:label xml:lang="en">Mass Transport Analysis</rdfs:label>
+  </ns1:Measurement>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#PermeabilityCoefficient">
+    <rdfs:label xml:lang="en">Permeability Coefficient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#DiffusionCoefficient">
+    <rdfs:label xml:lang="en">Diffusion Coefficient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Property rdf:about="https://w3id.org/h2kg/hydrogen-ontology#SolubilityCoefficient">
+    <rdfs:label xml:lang="en">Solubility Coefficient</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/h2kg/hydrogen-ontology#IonomerTransportProperty"/>
+  </ns1:Property>
+
+  <ns1:Measurement rdf:about="https://w3id.org/h2kg/hydrogen-ontology#PermeationCellMeasurement">
+    <rdfs:label xml:lang="en">Permeation Cell Measurement</rdfs:label>
+  </ns1:Measurement>
+
+  <ns1:Instrument rdf:about="https://w3id.org/h2kg/hydrogen-ontology#PermeationCell">
+    <rdfs:label xml:lang="en">Permeation Cell</rdfs:label>
+  </ns1:Instrument>
+
+  <ns1:Instrument rdf:about="https://w3id.org/h2kg/hydrogen-ontology#HumidityChamber">
+    <rdfs:label xml:lang="en">Humidity Chamber</rdfs:label>
+  </ns1:Instrument>
+
+  <ns1:Instrument rdf:about="https://w3id.org/h2kg/hydrogen-ontology#GasChromatograph">
+    <rdfs:label xml:lang="en">Gas Chromatograph</rdfs:label>
+  </ns1:Instrument>
+
+  <ns1:Instrument rdf:about="https://w3id.org/h2kg/hydrogen-ontology#MassFlowController">
+    <rdfs:label xml:lang="en">Mass Flow Controller</rdfs:label>
+  </ns1:Instrument>
+
+  <ns1:Agent rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Experimenter">
+    <rdfs:label xml:lang="en">Experimenter</rdfs:label>
+  </ns1:Agent>
+
+  <ns1:Agent rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Modeler">
+    <rdfs:label xml:lang="en">Modeler</rdfs:label>
+  </ns1:Agent>
+
+  <ns1:Metadata rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Keyword_Ionomer">
+    <rdfs:label xml:lang="en">Keyword: Ionomer</rdfs:label>
+  </ns1:Metadata>
+
+  <ns1:Metadata rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Keyword_Transport">
+    <rdfs:label xml:lang="en">Keyword: Transport</rdfs:label>
+  </ns1:Metadata>
+
+  <ns1:Metadata rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Keyword_PEMFC">
+    <rdfs:label xml:lang="en">Keyword: PEMFC</rdfs:label>
+  </ns1:Metadata>
+
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ResearchQuestion">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </ns5:Class>
+
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Paper">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </ns5:Class>
+
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Dataset">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </ns5:Class>
+
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Unit">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </ns5:Class>
+
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ReferenceElectrode">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </ns5:Class>
+
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#DataPoint">
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </ns5:Class>
+
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#RHE"/>
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#InkUltrasonicationTime">
+    <rdfs:label xml:lang="en">Ink Ultrasonication Time</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#InkUltrasonicationPower">
+    <rdfs:label xml:lang="en">Ink Ultrasonication Power</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#DryingTemperature">
+    <rdfs:label xml:lang="en">Drying Temperature</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#DryingTime">
+    <rdfs:label xml:lang="en">Drying Time</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#AnnealingTemperature">
+    <rdfs:label xml:lang="en">Annealing Temperature</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#AnnealingTime">
+    <rdfs:label xml:lang="en">Annealing Time</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonomerType">
+    <rdfs:label xml:lang="en">Ionomer Type</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#CatalystType">
+    <rdfs:label xml:lang="en">Catalyst Type</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#SupportType">
+    <rdfs:label xml:lang="en">Support Type</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#PtParticleSize">
+    <rdfs:label xml:lang="en">Pt Particle Size</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonomerDistribution">
+    <rdfs:label xml:lang="en">Ionomer Distribution</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#AgglomerateSize">
+    <rdfs:label xml:lang="en">Agglomerate Size</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#PrimaryParticleSize">
+    <rdfs:label xml:lang="en">Primary Particle Size</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#InkViscosity">
+    <rdfs:label xml:lang="en">Ink Viscosity</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#InkSurfaceTension">
+    <rdfs:label xml:lang="en">Ink Surface Tension</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ZetaPotential">
+    <rdfs:label xml:lang="en">Zeta Potential</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#StabilityTime">
+    <rdfs:label xml:lang="en">Stability Time</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#HydrodynamicDiameter">
+    <rdfs:label xml:lang="en">Hydrodynamic Diameter</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#ParticleSizeDistribution">
+    <rdfs:label xml:lang="en">Particle Size Distribution</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#SolidsContent">
+    <rdfs:label xml:lang="en">Solids Content</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#pH">
+    <rdfs:label xml:lang="en">pH</rdfs:label>
+  </ns1:Parameter>
+
+  <ns1:Parameter rdf:about="https://w3id.org/h2kg/hydrogen-ontology#IonicStrength">
+    <rdfs:label xml:lang="en">Ionic Strength</rdfs:label>
+  </ns1:Parameter>
+
+  <ns5:Class rdf:about="https://w3id.org/h2kg/hydrogen-ontology#Parameter"/>
+</rdf:RDF>
